@@ -2,7 +2,7 @@ package Learning;
 
 public class Car {
     //=====================================
-    int maxSpeed = 100;
+    int  maxSpeed = 100;
     int minSpeed = 0;
 
     double weight = 4079;
@@ -29,6 +29,99 @@ public class Car {
         this.isTheCarOn = isTheCarOn;
     }
 
+
+    //=====================================
+    // Getters and setters
+
+    public int getMaxSpeed() {
+        return this.maxSpeed;
+    }
+
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
+    public int getMinSpeed(){
+        return this.minSpeed;
+    }
+
+    public void setMinSpeed(int minSpeed) {
+        this.minSpeed = minSpeed;
+    }
+
+    public double getWeight(){
+        return this.weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public boolean isTheCarOn() {
+        return this.isTheCarOn;
+    }
+
+    public void setTheCarOn(boolean theCarOn) {
+        isTheCarOn = theCarOn;
+    }
+
+    public char getCondition() {
+        return this.condition;
+    }
+
+    public void setCondition(char condition) {
+        this.condition = condition;
+    }
+
+    public String getNameOfCar() {
+        return this.nameOfCar;
+    }
+
+    public void setNameOfCar(String nameOfCar) {
+        this.nameOfCar = nameOfCar;
+    }
+
+    public double getMaxFuel() {
+        return this.maxFuel;
+    }
+
+    public void setMaxFuel(double maxFuel) {
+        this.maxFuel = maxFuel;
+    }
+
+    public double getCurrentFuel() {
+        return this.currentFuel;
+    }
+
+    public void setCurrentFuel(double currentFuel) {
+        this.currentFuel = currentFuel;
+    }
+
+    public double getMpg() {
+        return this.mpg;
+    }
+
+    public void setMpg(double mpg) {
+        this.mpg = mpg;
+    }
+
+    public int getMaxNumberOfPeopleInCar() {
+        return this.maxNumberOfPeopleInCar;
+    }
+
+    public void setMaxNumberOfPeopleInCar(int maxNumberOfPeopleInCar) {
+        this.maxNumberOfPeopleInCar = maxNumberOfPeopleInCar;
+    }
+
+    public int getNumberOfPeopleInCar() {
+        return numberOfPeopleInCar;
+    }
+
+    public void setNumberOfPeopleInCar(int numberOfPeopleInCar) {
+        this.numberOfPeopleInCar = numberOfPeopleInCar;
+    }
+
+
     //=====================================
     public void printVariables(){
         System.out.println("This is the maxSpeed: " + maxSpeed);
@@ -49,27 +142,31 @@ public class Car {
         maxSpeed = maxSpeed+1;
     }
 
+    public void upgradeMaxSpeed(){
+        setMaxSpeed(getMaxSpeed() + 10);
+    }
+
     public void getIn(){
         // If there aren't too many people in the car...
-        if (numberOfPeopleInCar < maxNumberOfPeopleInCar){
+        if (this.numberOfPeopleInCar < this.maxNumberOfPeopleInCar){
             // then someone can get in
-            numberOfPeopleInCar++;
+            this.numberOfPeopleInCar++;
             System.out.println("Someone got in");
         }else{
             // otherwise print out the fact the car is full.
-            System.out.println("The car is full! " + numberOfPeopleInCar + " = " + maxNumberOfPeopleInCar);
+            System.out.println("The car is full! " + this.numberOfPeopleInCar + " = " + this.maxNumberOfPeopleInCar);
         }
     }
 
     public void getOut(){
         // If there's people in the car...
-        if (numberOfPeopleInCar > 0){
+        if (this.numberOfPeopleInCar > 0){
             // then tell one person to get out
-            numberOfPeopleInCar--;
+            this.numberOfPeopleInCar--;
             System.out.println("Someone got out");
         }else{
             // otherwise no one cen get out and we'll print that.
-            System.out.println("No one is in the car. Chill out! Number of person in car: " + numberOfPeopleInCar);
+            System.out.println("No one is in the car. Chill out! Number of person in car: " + this.numberOfPeopleInCar);
         }
     }
 
@@ -92,6 +189,7 @@ public class Car {
             System.out.println("The Car is already on " + isTheCarOn );
         }
     }
+
 
     //=====================================
     public static void main(String[] args) {
