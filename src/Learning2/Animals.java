@@ -19,9 +19,16 @@ public abstract class Animals {
         return age;
     }
 
+    public void setAge(int age){
+        this.age = age;
+    }
+
     public static void main(String[] args) {
         Dog dog  = new Dog();
         Cat cat = new Cat();
+
+        dog.setAge(13);
+        System.out.println(dog.getAge());
 
         dog.eat();
         cat.eat();
