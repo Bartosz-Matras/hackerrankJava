@@ -27,7 +27,7 @@ public class Day15 {
 
         for (int i = 0; i < n; i++){
             for (int j = 0; j < n; j++){
-                if (i != j && j > i){
+                if (j > i){
                     int item = Math.abs(integerList.get(j) - integerList.get(i));
                     if (item > max){
                         max = item;
