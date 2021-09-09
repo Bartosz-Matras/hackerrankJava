@@ -1,39 +1,39 @@
 package Learning2;
 
-public class Node {
+public class Node<D> {
     // Properties
-    Node next;
-    int data;
+    Node<D> next;
+    D data;
 
     // Methods
 
 
     // Constructors
-    public Node(int data) {
+    public Node(D data) {
         this.data = data;
         next = null;
     }
 
-    public Node(int data, Node next){
+    public Node(D data, Node<D> next){
         this.data = data;
         this.next = next;
     }
 
 
     // Getters and Setters
-    public int getData() {
+    public D getData() {
         return data;
     }
 
-    public Node getNext() {
+    public Node<D> getNext() {
         return next;
     }
 
-    public void setData(int data) {
+    public void setData(D data) {
         this.data = data;
     }
 
-    public void setNext(Node next) {
+    public void setNext(Node<D> next) {
         this.next = next;
     }
 }

@@ -2,10 +2,10 @@ package Learning2;
 
 import java.util.LinkedList;
 
-public class LinkedListUS {
+public class LinkedListUS<D> {
 
     // Properties
-    Node head;
+    Node<D> head;
     int count;
 
     // Constructors
@@ -14,7 +14,7 @@ public class LinkedListUS {
 //        count = 0;
 //    }
 
-    public LinkedListUS(Node newHead){
+    public LinkedListUS(Node<D> newHead){
         head = newHead;
         count = 1;
     }
@@ -22,9 +22,9 @@ public class LinkedListUS {
     //Methods
 
     // add
-    public void add(int newData){
-        Node temp = new Node(newData);
-        Node current = head;
+    public void add(D newData){
+        Node<D> temp = new Node<>(newData);
+        Node<D> current = head;
         while (current.getNext() != null){
             current = current.getNext();
         }
@@ -33,11 +33,11 @@ public class LinkedListUS {
     }
 
     // get
-    public int get(int index){
+    public D get(int index) throws IllegalArgumentException{
         if (index <= 0){
-            return -1;
+            throw new IllegalArgumentException("Index must be greater than 0.");
         }
-        Node current = head;
+        Node<D> current = head;
         for (int i =  1; i < index; i++){
             current = current.getNext();
         }
@@ -57,7 +57,7 @@ public class LinkedListUS {
     // remove
     public void remove(){
         // remove from the back of the list
-        Node current = head;
+        Node<D> current = head;
         while (current.getNext().getNext() == null){
             current = current.getNext();
         }
@@ -76,11 +76,16 @@ public class LinkedListUS {
         System.out.println();
 
 
-        LinkedListUS linkedListUS = new LinkedListUS(new Node(7));
+        LinkedListUS<Integer> linkedListUS = new LinkedListUS<>(new Node<>(7));
         linkedListUS.add(8);
-        System.out.println(linkedListUS.get(0));
-        System.out.println(linkedListUS.get(1));
-        System.out.println(linkedListUS.get(2));
+        try{
+            System.out.println(linkedListUS.get(0));
+            System.out.println(linkedListUS.get(1));
+            System.out.println(linkedListUS.get(2));
+        }catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
+
         System.out.println("Size: " + linkedListUS.size());
 
     }

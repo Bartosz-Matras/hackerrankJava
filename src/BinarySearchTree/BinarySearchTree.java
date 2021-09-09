@@ -16,5 +16,14 @@ public class BinarySearchTree {
         System.out.println(emptyBST.cardinality());
         scanner.close();
 
+
+        // Testing
+        EmptyBST<Integer> e = new EmptyBST<Integer>();
+        NonEmptyBST<Integer> ne = new NonEmptyBST<Integer>(5);
+
+        Testers.checkIsEmpty(e);
+
+        Testers.checkIsEmpty(ne);
+
     }
 }

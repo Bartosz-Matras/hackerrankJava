@@ -5,22 +5,29 @@ import java.util.Arrays;
 
 public class ArrayPractice {
 
-    public static void printArray(int[] array){
-        System.out.print("[");
-        for (int i = 0; i < array.length; i++){
-            System.out.print(array[i]);
-            if (i < array.length - 1){
-                System.out.print(", ");
-            }
+//    public static void printArray(int[] array){
+//        System.out.print("[");
+//        for (int i = 0; i < array.length; i++){
+//            System.out.print(array[i]);
+//            if (i < array.length - 1){
+//                System.out.print(", ");
+//            }
+//        }
+//        System.out.print("]");
+//        System.out.println();
+//    }
+
+    public static <E> void printArray(E[] array){
+        for (E element : array){
+            System.out.println(element + " ");
         }
-        System.out.print("]");
         System.out.println();
     }
 
     public static void main(String[] args) {
-        int[] intArray1;
-        int[] intArray2 = new int[4];
-        int[] intArray3 = {5, 2, 9, 1, 3};
+        Integer[] intArray1;
+        Integer[] intArray2 = new Integer[4];
+        Integer[] intArray3 = {5, 2, 9, 1, 3};
 
         String[] shoppingList = {"bananas", "apples", "pears"};
 
